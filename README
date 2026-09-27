@@ -1,0 +1,327 @@
+# 🎓 Student Enrollment & Course Management System (SECMS)
+
+A Salesforce-based Student Enrollment & Course Management System designed to manage **Students, Courses, Instructors, Enrollments, Approvals, Automation, Security, Reports, and Dashboards** in a centralized Lightning App.
+
+**Platform:** Salesforce
+**Project Type:** Salesforce Administrator Hands-on Project
+**Program:** SmartBridge
+**Progress:** 90%
+
+---
+
+## 📌 Project Overview
+
+The **Student Enrollment & Course Management System (SECMS)** is designed to digitalize the complete student enrollment lifecycle.
+
+Before implementing Salesforce, student and enrollment information was managed through spreadsheets and emails. SECMS centralizes this information using **Custom Objects, Relationships, Validation Rules, Approval Processes, Flows, Security, Reports, and Dashboards**.
+
+The system provides a structured and efficient way to manage student enrollment and course-related information within a single Salesforce Lightning App.
+
+---
+
+## 🎯 Objectives
+
+* Create a custom data model for Students, Courses, Enrollments, and Instructors.
+* Automate enrollment date population.
+* Automate approval notifications through email.
+* Enforce business rules using Validation Rules.
+* Manage enrollment requests through an Approval Process.
+* Provide role-based security and access control.
+* Create reports and dashboards for real-time monitoring.
+* Centralize student and course management in a Lightning App.
+
+---
+
+# 🏗️ Phase 2: Backend Development & Configurations
+
+### 1. Custom Objects
+
+| Custom Object   | Purpose                                         |
+| --------------- | ----------------------------------------------- |
+| `Student__c`    | Stores student personal and academic details    |
+| `Course__c`     | Stores the course catalog                       |
+| `Enrollment__c` | Junction object connecting Students and Courses |
+| `Instructor__c` | Stores instructor details                       |
+
+---
+
+### 2. Student Object Fields
+
+The Student object contains fields based on the requirements of the system.
+
+**Data Types Used:**
+
+* Text
+* Email
+* Picklist
+* Date
+* Lookup
+
+**Purpose:**
+To ensure accurate student information storage and proper mapping of business requirements.
+
+---
+
+### 3. Relationships
+
+The system uses Salesforce relationships to connect students, courses, and enrollments.
+
+* **Lookup Relationship:** Student → Enrollment
+* **Junction Object:** `Enrollment__c`
+* **Relationship Type:** Many-to-Many between Students and Courses
+
+**Benefit:**
+Provides proper data linking, consistency, and data integrity.
+
+---
+
+### 4. Validation Rules
+
+Validation Rules are implemented to prevent invalid data entry.
+
+**Example: Student Email Domain Validation**
+
+The validation rule ensures that students enter valid email domains according to the defined business requirement.
+
+**Purpose:**
+
+* Prevent invalid data.
+* Improve data accuracy.
+* Enforce business rules.
+
+---
+
+### 5. Approval Process
+
+### Enrollment Requests Approval
+
+The Enrollment Approval Process manages enrollment requests through a defined approval workflow.
+
+**Approval Flow:**
+
+```text
+Submitted
+    ↓
+Department Head Review
+    ↓
+Approved / Rejected
+    ↓
+Automatic Email Notification
+```
+
+This provides a structured process for reviewing and managing enrollment requests.
+
+---
+
+# 🎨 Phase 3: UI/UX Development & Customization
+
+## Lightning App
+
+A centralized **Student Management App** is created to provide easy access to the major objects and features.
+
+### Tabs
+
+Tabs are created for easy navigation and management of:
+
+* Students
+* Courses
+* Enrollments
+* Instructors
+
+---
+
+## Page Layouts & Record Types
+
+Page Layouts and Record Types are configured to control the fields and information displayed to users.
+
+### Enrollment Record Types
+
+Different layouts are configured for:
+
+* Full-time
+* Part-time
+
+**Benefits:**
+
+* Displays only relevant fields.
+* Reduces unnecessary data entry.
+* Improves user experience.
+* Supports different enrollment scenarios.
+
+---
+
+# ⚙️ Phase 4: Data Migration, Testing & Security
+
+## Automation with Flow
+
+### Auto-Populate Enrollment Date
+
+A **Record-Triggered Flow** is used to automatically populate the enrollment date when an enrollment record is created.
+
+### Approval Email Notification
+
+An **Email Alert** is configured to send notifications when an enrollment request is approved.
+
+---
+
+# 📊 Reports
+
+The system includes reports for monitoring important student and enrollment information.
+
+### Available Reports
+
+* **Students by Status**
+* **Enrollments by Course**
+* **Pending Enrollment Approvals**
+
+These reports provide useful information for monitoring and decision-making.
+
+---
+
+# 📈 Dashboard
+
+## Student Management Dashboard
+
+The Student Management Dashboard provides a real-time overview of student enrollment information.
+
+It helps users monitor enrollment-related information through Salesforce dashboard components.
+
+---
+
+# 🔐 Security Setup
+
+SECMS uses Salesforce security features to control access to system information.
+
+### Profiles & Permission Sets
+
+Role-based access is configured using:
+
+* Profiles
+* Permission Sets
+
+### Field-Level Security
+
+Field-Level Security is used to protect confidential information and control which fields users can access.
+
+---
+
+# 📁 Project Structure
+
+```text
+force-app/
+└── main/
+    └── default/
+        ├── objects/
+        │   ├── Student__c/
+        │   ├── Course__c/
+        │   ├── Enrollment__c/
+        │   └── Instructor__c/
+        │
+        ├── tabs/
+        ├── flexipages/
+        ├── flows/
+        ├── approvalProcesses/
+        └── validationRules/
+```
+
+---
+
+# 🚀 Installation & Deployment
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/mothishwariv/Student-Enrollment-course-Management-System-SECMS-.git
+```
+
+## 2. Navigate to the Project
+
+```bash
+cd Student-Enrollment-course-Management-System-SECMS-
+```
+
+## 3. Authenticate with Salesforce Org
+
+```bash
+sf org login web -a SECMS-Org
+```
+
+## 4. Deploy the Project
+
+```bash
+sf project deploy start --source-dir force-app
+```
+
+## 5. Assign Permission Set
+
+```bash
+sf org assign permset -n SECMS_Admin
+```
+
+---
+
+# 👥 Team Members
+
+* **Mothishwari V** – Team Lead
+* **Sharunithi M** – Member
+* **Sivagangadevi Iyyanar** – Member
+
+---
+
+# 📹 Project Progress
+
+| Phase                                    | Progress |
+| ---------------------------------------- | -------: |
+| Phase 1: Requirement Analysis & Planning |      90% |
+| Phase 2: Backend Development             |      90% |
+| Phase 3: UI/UX Development               |      90% |
+| Phase 4: Data Migration & Security       |      90% |
+| Phase 5: Deployment & Documentation      |      90% |
+
+**Overall Project Progress: 90%**
+
+---
+
+# 📚 Technologies & Salesforce Features
+
+### Platform
+
+* Salesforce
+
+### Salesforce Features Used
+
+* Custom Objects
+* Custom Fields
+* Lookup Relationships
+* Junction Objects
+* Validation Rules
+* Approval Processes
+* Record-Triggered Flows
+* Email Alerts
+* Lightning App
+* Tabs
+* Page Layouts
+* Record Types
+* Profiles
+* Permission Sets
+* Field-Level Security
+* Reports
+* Dashboards
+
+---
+
+# 📖 Reference
+
+**Salesforce Basics:**
+https://youtu.be/wPPI9-mK2P0
+
+---
+
+## 📌 Repository
+
+**GitHub Repository:**
+https://github.com/mothishwariv/Student-Enrollment-course-Management-System-SECMS-
+
+---
+
+© 2026 SECMS Team | Salesforce Administrator Project - SmartBridge
