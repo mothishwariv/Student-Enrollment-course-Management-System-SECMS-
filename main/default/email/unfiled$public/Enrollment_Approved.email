@@ -1,0 +1,6 @@
+Hi {!Enrollments_object__c.Student__c},
+
+     Your Enrollment for {!Enrollments_object__c.Name} is Approved!
+
+     Regards,
+     Admin

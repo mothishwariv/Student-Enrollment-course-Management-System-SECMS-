@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Enrollments object</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Enrollments objects</value>
+    </caseValues>
+    <layouts>
+        <layout>New Enrollment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Re- Enrollment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- New Enrollment --></label>
+        <name>New_Enrollment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Re-enrollment --></label>
+        <name>Re_enrollment</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Fees must be paid before approving an enrollment --></errorMessage>
+        <name>Fees_Must_Be_Paid_Before_Approval</name>
+    </validationRules>
+</CustomObjectTranslation>
